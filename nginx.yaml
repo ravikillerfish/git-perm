@@ -1,0 +1,31 @@
+---
+  - name: "Testing kubernetes with nginx"
+    hosts: kubernetes
+    gather_facts: false
+    tasks:
+    - name: "Deployin Nginx on Kubernetes cluster"
+      k8s:
+        state: present
+        definition:
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            name: nginx
+            namespace: default
+            labels:
+              app: nginx
+          spec:
+            selector:
+              matchLabels:
+                app: nginx
+            template:
+              metadata:
+                labels:
+                  app: nginx
+              spec:
+                containers:
+                - image: nginx
+                  name: nginx
+                  ports:
+                  - containerPort: 8080
+                
