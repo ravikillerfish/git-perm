@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('git') {
            steps {
-              git 'https://github.com/ravikillerfish/Jenkins1.git'
+              git 'https://github.com/ravikillerfish/git-perm.git'
            }
         }
         stage('deploy-kube-ansible') {
