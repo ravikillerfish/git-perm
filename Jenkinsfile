@@ -11,7 +11,7 @@ pipeline {
         }
         stage('deploy-kube-ansible') {
 	   steps {
-	      ansiblePlaybook extras: '$TAG', installation: 'ansible-kubernetes', inventory: 'hosts', playbook: 'nginx.yaml'
+	      ansiblePlaybook extras: 'TAG=$TAG', installation: 'ansible-kubernetes', inventory: 'hosts', playbook: 'nginx.yaml'
            }
 	}
     }
