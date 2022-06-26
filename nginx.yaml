@@ -24,7 +24,7 @@
                   app: nginx
               spec:
                 containers:
-                - image: nginx
+                - image: nginx:{{ TAG }}
                   name: nginx
                   ports:
                   - containerPort: 8080
