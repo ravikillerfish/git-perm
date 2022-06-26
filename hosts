@@ -10,7 +10,7 @@
 
 # Ex 1: Ungrouped hosts, specify before any group headers.
 [kubernetes]
-192.168.2.130 ansible_user=ravi ansibe_password=ravi
+192.168.2.130 ansible_user=ravi ansibe_ssh_password=ravi
 
 ## green.example.com
 ## blue.example.com
