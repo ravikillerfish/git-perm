@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    parameters {
+   // parameters {
     //   gitParameter(branch: '',branchFilter: '.*', defaultValue: '1.22', name: 'TAG', quickFilterEnabled: false, selectedValue: 'NONE', sortMode: 'NONE', tagFilter: '*', type: 'GitParameterDefinition')
-    }
+   // }
     stages {
         stage('git') {
            steps {
