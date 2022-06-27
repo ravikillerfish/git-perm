@@ -6,8 +6,19 @@ pipeline {
     stages {
         stage('git') {
            steps {
-              //git branch: 'stg', url: 'https://github.com/ravikillerfish/git-perm.git'
-              checkout([$class: 'GitSCM', branches: [[name: 'refs/heads/stg']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ravikillerfish/git-perm.git']]])
+              checkout(
+  		[
+    		  $class: 'GitSCM',
+                  extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'git-perm']],
+                  branches: [[name: 'refs/heads/${env.BRANCH_NAME}']],
+                  userRemoteConfigs: [
+                    [
+                      url: 'https://github.com/ravikillerfish/git-perm.git',
+                      name: 'origin'
+                    ]
+                 ]           
+               ]
+             )
            }
         }
         stage('deploy-kube-ansible') {
