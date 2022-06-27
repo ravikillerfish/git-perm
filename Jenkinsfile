@@ -23,7 +23,7 @@ pipeline {
         }
         stage('deploy-kube-ansible') {
 	   steps {
-              ansiblePlaybook extras: '--extra-var "TAG=${TAG}"', installation: 'ansible-kubernetes', inventory: 'hosts', playbook: 'nginx.yaml' 
+              ansiblePlaybook extras: '--extra-var "TAG=${TAG} namespace=${namespace} replicas=${replicas}"', installation: 'ansible-kubernetes', inventory: 'hosts', playbook: 'nginx.yaml' 
 	   }
 	}
     }
