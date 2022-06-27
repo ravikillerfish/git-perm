@@ -11,7 +11,7 @@
           kind: Deployment
           metadata:
             name: nginx
-            namespace: default
+            namespace: {{ namespace }}
             labels:
               app: nginx
           spec:
