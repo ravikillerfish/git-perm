@@ -11,11 +11,11 @@
           kind: Deployment
           metadata:
             name: nginx
-            namespace: {{ namespace }}
+            namespace: "{{ namespace }}"
             labels:
               app: nginx
           spec:
-            replicas: {{ replicas }
+            replicas: "{{ replicas }}"
             selector:
               matchLabels:
                 app: nginx
