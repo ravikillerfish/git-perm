@@ -10,7 +10,7 @@ pipeline {
   		[
     		  $class: 'GitSCM',
                   extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'git-perm']],
-                  branches: [[name: 'refs/heads/${env.BRANCH_NAME}']],
+                  branches: [[name: "refs/heads/${env.BRANCH_NAME}"]],
                   userRemoteConfigs: [
                     [
                       url: 'https://github.com/ravikillerfish/git-perm.git',
