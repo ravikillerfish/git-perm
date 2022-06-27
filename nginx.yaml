@@ -15,6 +15,7 @@
             labels:
               app: nginx
           spec:
+            replicas: {{ replicas }
             selector:
               matchLabels:
                 app: nginx
