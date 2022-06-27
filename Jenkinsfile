@@ -6,12 +6,12 @@ pipeline {
     stages {
         stage('git') {
            steps {
-              git branch: '$branch', url: 'https://github.com/ravikillerfish/git-perm.git''
+              git branch: '${branch}', url: 'https://github.com/ravikillerfish/git-perm.git'
            }
         }
         stage('deploy-kube-ansible') {
 	   steps {
-              ansiblePlaybook extras: '--extra-var "TAG=1.22"', installation: 'ansible-kubernetes', inventory: 'hosts', playbook: 'nginx.yaml' 
+              ansiblePlaybook extras: '--extra-var "TAG=${TAG}"', installation: 'ansible-kubernetes', inventory: 'hosts', playbook: 'nginx.yaml' 
 	   }
 	}
     }
